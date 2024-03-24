@@ -22,17 +22,16 @@ int main() {
   roster.printAll();
   cout << endl;
 
-  
   cout << "CALLING INVALID EMAILS:" << endl;
   roster.printInvalidEmails();
   cout << endl;
-  
-  /* cout << "CALLING AVERAGE DAYS:" << endl;
-  for (int i = 0; i < 5; i++) {
-    roster.printAverageDaysInCourse(roster.classRosterArray[i]->getStudentId());
-  }
- */
-  
+
+  cout << "CALLING AVERAGE DAYS:" << endl;
+  roster.printAverageDaysInCourse("A3");
+  cout << endl;
+
+  cout << "CALLING AVERAGE DAYS:" << endl;
+  roster.printAverageDaysInCourse("A1");
   cout << endl;
 
   // // Print students by degree by program
@@ -41,14 +40,21 @@ int main() {
   cout << endl;
 
   // Remove student from roster
-  cout << "CALLING REMOVE STUDENT:" << endl;
+  cout << "CALLING REMOVE STUDENT ID:" << endl;
   roster.remove("A3");
   cout << endl;
 
+  cout << "CALLING PRINT ALL:" << endl;
   roster.printAll();
   cout << endl;
-  
+
+  cout << "CALLING REMOVE STUDENT FOR SAME STUDENT ID:" << endl;
   roster.remove("A3");
+
+  // Release Roster memory
+  cout << "CALLING DESTRUCTOR ON ROASTER:" << endl;
+  roster.~Roster();
+  cout << endl;
 
   return 0;
 }
