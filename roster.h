@@ -13,7 +13,9 @@ private:
   Student *classRosterArray[];
 
 public:
+  // Construtor
   Roster();
+  ~Roster();
   void add(string studentID, string firstName, string lastName,
            string emailAddress, int age, int daysInCourse1, int daysInCourse2,
            int daysInCourse3, DegreeProgram degreeProgram);
@@ -22,7 +24,9 @@ public:
   void printAverageDaysInCourse(string studentID);
   void printInvalidEmails();
   void printByDegreeProgram(DegreeProgram degreeProgram);
-  Student* getClassRosterArray();
+  Student *getClassRosterArray();
+  // Destructor to deallocate memory
+  
 };
 
 #endif // ROSTER_H
